@@ -1,0 +1,7 @@
+{"_id":"imported-bias-6324c09c2e736153044b4f70","_type":"bias","name":"Center","biasColor":"hsla(267.6190476190476, 48.09%, 74.31%, 1.00)","contrastColor":"hsla(0, 0.00%, 100.00%, 1.00)"}
+{"_id":"imported-bias-6324c09c2e73613bd34b4f48","_type":"bias","name":"Leans Left","biasColor":"hsla(208.4848484848485, 90.94%, 83.32%, 1.00)","contrastColor":"hsla(0, 0.00%, 100.00%, 1.00)"}
+{"_id":"imported-bias-6324c09c2e736145584b4f5a","_type":"bias","name":"Leans Right","biasColor":"hsla(0, 100.00%, 77.90%, 1.00)","contrastColor":"hsla(0, 0.00%, 100.00%, 1.00)"}
+{"_id":"imported-bias-6324c09c2e736127404b5047","_type":"bias","name":"Left","biasColor":"hsla(208.4848484848485, 58.58%, 66.86%, 1.00)","contrastColor":"hsla(0, 0.00%, 100.00%, 1.00)"}
+{"_id":"imported-bias-6324c09c2e736158b14b5213","_type":"bias","name":"Mixed","biasColor":"hsla(151.1320754716981, 85.64%, 47.97%, 1.00)","contrastColor":"hsla(0, 0.00%, 100.00%, 1.00)"}
+{"_id":"imported-bias-6324c09c2e7361ea8f4b4f34","_type":"bias","name":"Neutral","biasColor":"hsla(0, 0.00%, 58.00%, 1.00)","contrastColor":"hsla(0, 0.00%, 100.00%, 1.00)"}
+{"_id":"imported-bias-6324c09c2e736126ba4b5039","_type":"bias","name":"Right","biasColor":"hsla(0, 93.33%, 70.59%, 1.00)","contrastColor":"hsla(0, 0.00%, 100.00%, 1.00)"}

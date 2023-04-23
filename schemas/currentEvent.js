@@ -25,13 +25,19 @@ export default {
 			title: "Slug",
 			type: "slug",
 			group: "seo",
+			options: {
+				source: "name",
+				slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+			},
 			validation: (Rule) => Rule.required(),
 		},
 		{
 			name: "lastUpdated",
 			title: "Last Updated",
 			type: "date",
-			validation: (Rule) => Rule.required(),
+			options: {
+				dateFormat: "MM/DD/YYYY",
+			}
 		},
 		{
 			name: "summary",
@@ -54,7 +60,98 @@ export default {
 			title: "Body",
 			type: "richText",
 			group: "content",
-			validation: (Rule) => Rule.required(),
+		},
+		{
+			name: "histories",
+			title: "History Articles",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "history" }]
+				}
+			],
+		},
+		{
+			name: "leftNarrative",
+			title: "Left Narrative",
+			type: "richText",
+		},
+		{
+			name: "rightNarrative",
+			title: "Right Narrative",
+			type: "richText",
+		},
+		{
+			name: "bipartisanNarrative",
+			title: "Bipartisan Narrative",
+			type: "richText",
+		},
+		{
+			name: "activities",
+			title: "Activities",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "activity" }]
+				}
+			],
+		},
+		{
+			name: "questions",
+			title: "Questions",
+			type: "richText",
+		},
+		{
+			name: "classroomContent",
+			title: "Classroom Content",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "classroomContent" }]
+				}
+			],
+		},
+		{
+			name: "module",
+			title: "Module",
+			type: "reference",
+			to: [{ type: "topic" }]
+		},
+		{
+			name: "weight",
+			title: "Weight",
+			type: "reference",
+			to: [{ type: "weight" }]
+		},
+		{
+			name: "weightDescription",
+			title: "Content Weight Description",
+			type: "richText",
+		},
+		{
+			name: "tags",
+			title: "Tags",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "tag" }]
+				}
+			],
+		},
+		{
+			name: "subunits",
+			title: "Subunits",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "subunit" }]
+				}
+			],
 		},
 	],
 };

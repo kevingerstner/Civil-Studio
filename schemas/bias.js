@@ -1,6 +1,6 @@
 export default {
-	name: "bias",
 	type: "document",
+	name: "bias",
 	title: "Bias",
 	fields: [
 		{

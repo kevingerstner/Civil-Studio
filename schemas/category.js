@@ -13,7 +13,10 @@ export default {
 			name: "slug",
 			title: "Slug",
 			type: "slug",
-			source: "title",
+			options: {
+				source: "name",
+				slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+			},
 			validation: (Rule) => Rule.required(),
 		},
 	],

@@ -18,35 +18,10 @@ export default {
 			},
 		},
 		{
-			name: "image",
-			type: "image",
-			title: "Thumbnail",
-		},
-		{
 			name: "source",
-			title: "Source",
+			title: "Content Source",
 			type: "reference",
 			to: [{ type: "source" }],
-		},
-		{
-			name: "url",
-			title: "Content URL",
-			type: "url",
-		},
-		{
-			name: "bias",
-			title: "Bias",
-			type: "reference",
-			to: [{ type: "bias" }],
-		},
-		{
-			name: "biasSource",
-			title: "Bias Rating Source",
-			type: "string",
-			description: "Was the bias determined by our team [Team Rating] or AllSides?",
-			options: {
-				list: ["AllSides", "Team Rating"],
-			},
 		},
 		{
 			name: "type",
@@ -68,14 +43,10 @@ export default {
 			},
 		},
 		{
-			name: "datePosted",
-			title: "Date Posted",
-			type: "date",
-		},
-		{
 			name: "summary",
 			title: "Summary",
 			type: "text",
+			description: "A few sentences describing the content"
 		},
 		{
 			name: "discussionQuestions",
@@ -85,10 +56,48 @@ export default {
 				"If there are discussion questions for this source, add them here in the format of a numbered list",
 		},
 		{
+			name: "bias",
+			title: "Bias",
+			type: "reference",
+			to: [{ type: "bias" }],
+		},
+		{
+			name: "biasSource",
+			title: "Bias Rating Source",
+			type: "string",
+			description: "Was the bias determined by our team [Team Rating] or AllSides?",
+			options: {
+				list: ["AllSides", "Team Rating"],
+			},
+		},
+		{
+			name: "url",
+			title: "Content URL",
+			type: "url",
+		},
+		{
+			name: "image",
+			type: "image",
+			title: "Thumbnail",
+		},
+		{
+			name: "datePosted",
+			title: "Date Posted",
+			type: "date",
+			options: {
+				dateFormat: "MM/DD/YYYY",
+			},
+		},
+		{
 			name: "timeToView",
 			title: "Time to View",
 			type: "number",
 			description: "How long it will take to view this content (in minutes)",
 		},
+		{
+			name: "embed",
+			title: "Embed",
+			type: "richText",
+		}
 	],
 };

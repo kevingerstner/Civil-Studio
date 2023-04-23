@@ -18,23 +18,38 @@ export default {
 	],
 	fields: [
 		{
+			name: "name",
+			title: "Name",
+			type: "string",
+		},
+		{
 			name: "slug",
 			title: "Slug",
 			type: "slug",
-			source: "title",
 			group: "seo",
-			validation: (Rule) => Rule.required(),
+			options: {
+				source: "name",
+				slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+			},
 		},
 		{
 			name: "publishDate",
 			type: "date",
 			title: "Date Published",
 			validation: (Rule) => Rule.required(),
+			options: {
+				dateFormat: "MM/DD/YYYY",
+			}
 		},
 		{
-			name: "title",
-			type: "string",
-			title: "Title",
+			name: "tags",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "tag" }],
+				},
+			],
 		},
 		{
 			name: "author",
@@ -47,61 +62,49 @@ export default {
 			],
 		},
 		{
-			name: "category",
-			type: "array",
-			of: [
-				{
-					type: "reference",
-					to: [{ type: "category" }],
-				},
-			],
+			name: "coverImage",
+			title: "Cover Image",
+			type: "figure",
 		},
 		{
-			name: "coverImage",
-			type: "figure",
-			title: "Cover Image",
+			name: "slidesEmbed",
+			title: "Slides Embed",
+			type: "richText",
 		},
 		{
 			name: "summary",
-			type: "string",
 			title: "Summary",
+			type: "string",
 		},
 		{
 			name: "body",
-			type: "richText",
 			title: "Body",
+			type: "richText",
+		},
+		{
+			name: "narrativeBody",
+			title: "Narrative Body",
+			type: "richText",
 		},
 		{
 			name: "leftNarrative",
-			type: "richText",
 			title: "Left Narrative",
+			type: "richText",
 		},
 		{
 			name: "leanLeftNarrative",
-			type: "richText",
 			title: "Lean Left Narrative",
+			type: "richText",
 		},
 		{
 			name: "leanRightNarrative",
-			type: "richText",
 			title: "Lean Right Narrative",
+			type: "richText",
 		},
 		{
 			name: "rightNarrative",
-			type: "richText",
 			title: "Right Narrative",
-		},
-		{
-			name: "discussionQuestions",
 			type: "richText",
-			title: "Discussion Questions",
-			group: "content",
-		},
-		{
-			name: "qAndA",
-			type: "richText",
-			title: "Q & A",
-			group: "content",
 		},
 		{
 			name: "classroomContents",
@@ -116,15 +119,16 @@ export default {
 			],
 		},
 		{
-			name: "currentEvents",
-			type: "array",
-			of: [
-				{
-					type: "reference",
-					to: [{ type: "currentEvent" }],
-				},
-			],
-			group: "references",
+			name: "discussionQuestions",
+			type: "richText",
+			title: "Discussion Questions",
+			group: "content",
+		},
+		{
+			name: "qAndA",
+			type: "richText",
+			title: "Q & A",
+			group: "content",
 		},
 		{
 			name: "googleSlidesLink",
@@ -136,6 +140,48 @@ export default {
 			name: "kahootLink",
 			type: "url",
 			title: "Kahoot Link",
+			group: "references",
+		},
+		{
+			name: "readingComprehensionLink",
+			title: "Reading Comprehension Link",
+			type: "url",
+			group: "references",
+		},
+		{
+			name: "currentEvents",
+			title: "Current Events",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "currentEvent" }],
+				},
+			],
+			group: "references",
+		},
+		{
+			name: "apGovSubunits",
+			title: "AP Gov Subunits",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "subunit" }],
+				},
+			],
+			group: "references",
+		},
+		{
+			name: "civicsSubunits",
+			title: "Civics Subunits",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "subunit" }],
+				},
+			],
 			group: "references",
 		},
 	],

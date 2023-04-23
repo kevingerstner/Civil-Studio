@@ -1,8 +1,6 @@
-import { articleBySlugQuery } from "../../nextjs-blog/lib/sanity.queries";
-
 export default {
 	name: "source",
-	title: "Media Source",
+	title: "Source",
 	type: "document",
 	fields: [
 		{
@@ -28,7 +26,7 @@ export default {
 			to: [{ type: "bias" }],
 		},
 		{
-			name: "url",
+			name: "sourceUrl",
 			title: "Source URL",
 			type: "url",
 		},
@@ -38,4 +36,13 @@ export default {
 			type: "url",
 		},
 	],
+	orderings: [
+		{
+			title: "Name",
+			name: "name",
+			by: [
+				{ field: 'name', direction: "asc" }
+			]
+		}
+	]
 };

@@ -64,6 +64,16 @@ export default {
 			title: "Most Important Issues",
 		},
 		{
+			name: "twitterLink",
+			title: "Twitter Link",
+			type: "url",
+		},
+		{
+			name: "linkedInLink",
+			title: "LinkedIn Link",
+			type: "url",
+		},
+		{
 			name: "bias",
 			type: "reference",
 			to: { type: "bias" },
