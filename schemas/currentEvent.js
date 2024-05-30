@@ -40,6 +40,12 @@ export default {
 			}
 		},
 		{
+			name: "body",
+			title: "Body",
+			type: "richText",
+			group: "content",
+		},
+		{
 			name: "summary",
 			title: "Summary",
 			type: "string",
@@ -56,8 +62,8 @@ export default {
 			type: "url",
 		},
 		{
-			name: "body",
-			title: "Body",
+			name: "terms",
+			title: "Terms",
 			type: "richText",
 			group: "content",
 		},

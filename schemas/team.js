@@ -7,6 +7,17 @@ export default {
 			name: "name",
 			type: "string",
 			title: "Name",
+			validation: (Rule) => Rule.required(),
+		},
+		{
+			name: "slug",
+			title: "Slug",
+			type: "slug",
+			options: {
+				source: "name",
+				slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+			},
+			validation: (Rule) => Rule.required(),
 		},
 		{
 			name: "firstName",

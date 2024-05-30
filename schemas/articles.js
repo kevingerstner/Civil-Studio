@@ -31,6 +31,7 @@ export default {
 				source: "name",
 				slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
 			},
+			validation: (Rule) => Rule.required(),
 		},
 		{
 			name: "publishDate",
@@ -72,6 +73,15 @@ export default {
 			type: "richText",
 		},
 		{
+			name: "googleSlides",
+			title: "Google Slides",
+			type: "code",
+			options: {
+				language: "html",
+			},
+			withFilename: false,
+		},
+		{
 			name: "summary",
 			title: "Summary",
 			type: "string",
@@ -83,7 +93,7 @@ export default {
 		},
 		{
 			name: "narrativeBody",
-			title: "Narrative Body",
+			title: "Newsletter Body",
 			type: "richText",
 		},
 		{
@@ -129,6 +139,18 @@ export default {
 			type: "richText",
 			title: "Q & A",
 			group: "content",
+		},
+		{
+			name: "histories",
+			title: "Histories",
+			type: "array",
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "history" }]
+				}
+			],
+			group: "references",
 		},
 		{
 			name: "googleSlidesLink",
@@ -185,4 +207,20 @@ export default {
 			group: "references",
 		},
 	],
+	orderings: [
+		{
+			title: "Name (A->Z)",
+			name: "nameAsc",
+			by: [
+				{ field: 'name', direction: 'asc' },
+			]
+		},
+		{
+			title: 'Date Published, New',
+			name: 'datePublishedNew',
+			by: [
+				{ field: 'datePublished', direction: 'asc' }
+			]
+		}
+	]
 };

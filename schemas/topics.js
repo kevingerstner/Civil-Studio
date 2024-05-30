@@ -7,6 +7,7 @@ export default {
             name: "name",
             title: "Name",
             type: "string",
+            validation: (Rule) => Rule.required(),
         },
         {
             name: "slug",
@@ -16,6 +17,7 @@ export default {
                 source: "name",
                 slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
             },
+            validation: (Rule) => Rule.required(),
         },
         {
             name: "moduleSummary",
